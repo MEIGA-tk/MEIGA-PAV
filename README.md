@@ -1,6 +1,6 @@
 ## MEIGA-PAV
 
-MEIGA-PAV is a computational method for the annotation of mobile element insertions (MEI) in a VCF containing structural variation (SV) calls. Although it has been designed to process SVs derived from the Phased Assembly Variant Caller (PAV; https://github.com/EichlerLab/pav), it should be compatible with the output of any long-read variant callers, as long as the sequence for insertion events is included in the VCF. 
+MEIGA-PAV is a computational method for the annotation of mobile element insertions (MEI) in a VCF containing sequence-resolved structural variation (SV) calls. Although it has been designed to process SVs derived from the Phased Assembly Variant Caller (PAV; https://github.com/EichlerLab/pav), it should be compatible with the output of any long-read variant callers, as long as the sequence for insertion events is included in the VCF. 
 
 MEIGA-PAV was developed for the Human Genome Structural Variation Consortium (HGSVC)
 
@@ -20,22 +20,29 @@ $ cd ~/apps
 $ git clone https://github.com/Chimera-tools/ChimPipe.git
 ```
 
-ChimPipe does not require any further installation step. It is written in Python and can be run as a standalone application on diverse Linux systems. 
+MEIGA-PAV does not require any further installation step. It is written in Python and can be run as a standalone application on diverse Linux systems. 
 
 ## Requirements
 
 1. Hardware:
 
-    * ...
-    * ...
+    * 64-bits CPU
 
 2. Software:
 
-    * ...
-    * ... 
-    * ...
-    * ... 
+    * 64-bit Linux System
+    * Python v3.6 or higher
+    * paftools v.r755 (https://github.com/lh3/minimap2/tree/master/misc)
+    * bwa-mem v0.7.17 (https://github.com/lh3/bwa)
+    * minimap2 v2.1 (https://github.com/lh3/minimap2)
 
+3. Python libraries 
+    * pysam 
+    * cigar
+    * numpy
+    * itertools
+    * Biopython
+   
 ## Input:
 
 
