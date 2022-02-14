@@ -42,17 +42,19 @@ MEIGA-PAV does not require any further installation step. It is written in Pytho
     * Biopython
    
 ## Input
-script=/Users/brodriguez/Research/Projects/MEIGA-tk/MEIGA-PAV/MEIGA-PAV.py
-vcf=/Users/brodriguez/Research/Projects/HGSVC2/Data/SV/Freeze4/freeze4.sv-alt.vcf
-consensus=/Users/brodriguez/Research/Projects/MEIGA/MEIGA/databases/H.Sapiens/hg19/consensusDb.fa
-reference=/Users/brodriguez/Research/References/Genomes/H.sapiens/GRCh38/GCA_000001405.15_GRCh38_no_alt_analysis_set_no_chr_MT.fna
-mtGenome=/Users/brodriguez/Research/References/Genomes/H.sapiens/GRCh38/chrM.fa
-sampleId='PAV_MEI_MEIGA.freeze4'
-outDir=/Users/brodriguez/Research/Projects/HGSVC2/Analysis/Main/MEIGA_calls_pav/freeze4/
-mkdir $outDir
+MEIGA-PAV takes as input 6 mandatory arguments:
 
-source activate py36
-time python $script $vcf $consensus $reference $mtGenome $sampleId -o $outDi
+   1. VCF: Input VCF file containing sequence-resolved structural variation calls. 
+   2. consensus: Fasta file containing consensus sequences for retrotransposon subfamilies (Alu, L1 and SVA).
+   3. reference: Fasta file for the human genome reference. Use same chromosome labeling nomenclature as for the input VCF. BWA-mem index need to be located in the same folder
+   4. mt_reference: Fasta file for the mitochrondrial genome reference. 
+   5. sampleID: Output VCF file will be named accordingly.
+   6. outDir: Output directory. 
+
+## Execution
+python MEIGA-PAV.py freeze4.sv-alt.vcf consensusDb.fa GCA_000001405.15_GRCh38_no_alt_analysis_set_no_chr_MT.fna chrM.fa 'PAV_MEI_MEIGA.freeze4' -o freeze4
+
+Both the input VCF and the database of consensus retrotransposon sequences are provided in the folder /execution. Reference genome sequences can be downloaded from the UCSC browser (ftp://hgdownload.soe.ucsc.edu/goldenPath).
 
 ## Output
 MEIGA-PAV produces as output a standard VCF file containing the subset of insertions from the input VCF corresponding to MEI. MEI annotation information is included in the following additional INFO fields:
@@ -76,6 +78,8 @@ MEIGA-PAV produces as output a standard VCF file containing the subset of insert
     * TDLEN_5PRIME: Length of 5-prime transduction 
     * TDLEN_3PRIME: Length of 3-prime transduction 
     * STRAND: Insertion DNA strand (+ or -)
+
+An example of VCF output (PAV_MEI_MEIGA.freeze4.vcf) is provided in the /execution folder. This results from the annotation of the input VCF (freeze4.sv-alt.vcf) included in the folder as well as an example 
 
 ## License
 MEIGA-PAV is distributed under GPL-3.0 License
