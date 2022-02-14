@@ -52,9 +52,12 @@ MEIGA-PAV takes as input 6 mandatory arguments:
    6. outDir: Output directory. 
 
 ## Execution
-python MEIGA-PAV.py freeze4.sv-alt.vcf consensusDb.fa GCA_000001405.15_GRCh38_no_alt_analysis_set_no_chr_MT.fna chrM.fa 'PAV_MEI_MEIGA.freeze4' -o freeze4
+python MEIGA-PAV.py freeze3.sv.alt.vcf consensusDb.fa GCA_000001405.15_GRCh38_no_alt_analysis_set_no_chr_MT.fna chrM.fa 'PAV_MEI_MEIGA.freeze3' -o freeze3
 
-Both the input VCF and the database of consensus retrotransposon sequences are provided in the folder /execution. Reference genome sequences can be downloaded from the UCSC browser (ftp://hgdownload.soe.ucsc.edu/goldenPath).
+File availability:
+  * Example VCF file for testing purposes can be downloaded from the 1000 genomes data portal (http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/integrated_callset/)
+  * The database of consensus retrotransposon sequences is provided in the /execution folder. 
+  * Reference genome sequences can be downloaded from the UCSC browser (ftp://hgdownload.soe.ucsc.edu/goldenPath).
 
 ## Output
 MEIGA-PAV produces as output a standard VCF file containing the subset of insertions from the input VCF corresponding to MEI. MEI annotation information is included in the following additional INFO fields:
@@ -79,7 +82,7 @@ MEIGA-PAV produces as output a standard VCF file containing the subset of insert
     * TDLEN_3PRIME: Length of 3-prime transduction 
     * STRAND: Insertion DNA strand (+ or -)
 
-An example of VCF output (PAV_MEI_MEIGA.freeze4.vcf) is provided in the /execution folder. This results from the annotation of the input VCF (freeze4.sv-alt.vcf) included in the folder as well as an example 
+An example of VCF output (PAV_MEI_MEIGA.freeze3.vcf) is provided in the /execution folder. This results from the annotation of the input VCF (freeze3.sv.alt.vcf) included in the folder as well as an example 
 
 ## License
 MEIGA-PAV is distributed under GPL-3.0 License
